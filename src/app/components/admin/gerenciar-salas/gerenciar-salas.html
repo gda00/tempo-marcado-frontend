@@ -1,6 +1,7 @@
 <h2>Gerenciar Salas</h2>
 
 @if (!isFormularioAberto) {
+  <div class="container">
   <button (click)="abrirFormularioParaCriar()">Adicionar Nova Sala</button>
 
   <table>
@@ -32,9 +33,12 @@
       }
     </tbody>
   </table>
+
+  </div>
 }
 
 @if (isFormularioAberto) {
+  <div class="container">
   <div class="formulario-container">
     <h3>{{ salaEmEdicao.id ? 'Editar Sala' : 'Nova Sala' }}</h3>
     <form #salaForm="ngForm" (ngSubmit)="salvarSala()">
@@ -68,5 +72,6 @@
         <button type="button" (click)="fecharFormulario()">Cancelar</button>
       </div>
     </form>
+  </div>
   </div>
 }

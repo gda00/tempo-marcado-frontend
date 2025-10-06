@@ -1,0 +1,66 @@
+h2 {
+  margin-bottom: 20px;
+}
+
+.lista-salas {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.sala-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sala-item:last-child {
+  border-bottom: none;
+}
+
+.sala-item button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 8px 14px;
+}
+
+.sala-item button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.formulario-reserva {
+  max-width: 600px;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid #17a2b8;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}

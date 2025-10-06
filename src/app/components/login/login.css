@@ -5,21 +5,28 @@
   background: var(--white-color);
   border-radius: 8px;
   box-shadow: var(--shadow);
+  border-top: 4px solid var(--primary-color);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-weight: 500;
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   box-sizing: border-box;
@@ -27,4 +34,6 @@
 
 button {
   width: 100%;
+  padding: 12px;
+  font-size: 16px;
 }

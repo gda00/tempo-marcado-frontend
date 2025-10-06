@@ -1,0 +1,33 @@
+h2 {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--primary-color);
+  line-height: 1.6;
+}
+
+li hr {
+  margin: 15px 0;
+}
+
+li button {
+  background-color: var(--danger-color);
+  color: var(--white-color);
+  padding: 8px 14px;
+  margin-top: 10px;
+}
+
+li button:hover {
+  background-color: var(--danger-color-hover);
+}

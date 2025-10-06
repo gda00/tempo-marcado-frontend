@@ -1,0 +1,15 @@
+h2 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+td button {
+  background-color: var(--danger-color);
+  color: var(--white-color);
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+td button:hover {
+  background-color: var(--danger-color-hover);
+}

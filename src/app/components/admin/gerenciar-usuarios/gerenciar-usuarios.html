@@ -1,6 +1,7 @@
 <h2>Gerenciar Usuários</h2>
 
 @if (!isFormularioAberto) {
+  <div class="container">
   <button (click)="abrirFormularioParaCriar()">Adicionar Novo Usuário</button>
 
   <table>
@@ -30,9 +31,12 @@
       }
     </tbody>
   </table>
+
+  </div>
 }
 
 @if (isFormularioAberto) {
+  <div class="container">
   <div class="formulario-container">
     <h3>{{ usuarioEmEdicao.id ? 'Editar Usuário' : 'Novo Usuário' }}</h3>
     <form #usuarioForm="ngForm" (ngSubmit)="salvarUsuario()">
@@ -62,5 +66,6 @@
         <button type="button" (click)="fecharFormulario()">Cancelar</button>
       </div>
     </form>
+  </div>
   </div>
 }

@@ -1,0 +1,88 @@
+h2 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.container > button {
+  margin-bottom: 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.container > button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+td button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+td button:first-of-type {
+  background-color: #17a2b8;
+  color: var(--white-color);
+}
+td button:first-of-type:hover {
+  background-color: #138496;
+}
+
+td button:last-of-type {
+  background-color: var(--danger-color);
+  color: var(--white-color);
+}
+td button:last-of-type:hover {
+  background-color: var(--danger-color-hover);
+}
+
+.formulario-container {
+  max-width: 600px;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.form-group, .form-group-check {
+  margin-bottom: 15px;
+}
+
+.form-group label, .form-group-check label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.form-actions button {
+  flex-grow: 1;
+}
+
+.form-actions button[type="button"] {
+  background-color: #6c757d;
+  color: var(--white-color);
+}
+
+.form-actions button[type="button"]:hover {
+  background-color: #5a6268;
+}

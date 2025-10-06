@@ -1,0 +1,20 @@
+<h1>Sistema de Agendamento "Tempo Marcado"</h1>
+
+@if (authService.isLoggedIn()) {
+  <nav>
+    <a routerLink="/agendamento">Agendamento</a>
+    <a routerLink="/minhas-reservas">Minhas Reservas</a>
+
+    @if(authService.isAdmin()) {
+        <a routerLink="/admin/usuarios">Gerenciar Usuários</a>
+        <a routerLink="/admin/salas">Gerenciar Salas</a>
+        <a routerLink="/admin/reservas">Gerenciar Reservas</a>
+    }
+
+    <button (click)="logout()">Sair</button>
+  </nav>
+}
+
+<hr />
+
+<router-outlet></router-outlet>

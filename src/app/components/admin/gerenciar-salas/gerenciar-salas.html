@@ -1,0 +1,72 @@
+<h2>Gerenciar Salas</h2>
+
+@if (!isFormularioAberto) {
+  <button (click)="abrirFormularioParaCriar()">Adicionar Nova Sala</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome da Sala</th>
+        <th>Capacidade</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(sala of salas; track sala.id) {
+        <tr>
+          <td>{{ sala.id }}</td>
+          <td>{{ sala.nome_sala }}</td>
+          <td>{{ sala.capacidade }}</td>
+          <td>{{ sala.ativa ? 'Ativa' : 'Inativa' }}</td>
+          <td>
+            <button (click)="abrirFormularioParaEditar(sala)">Editar</button>
+            <button (click)="removerSala(sala.id)">Remover</button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="5">Nenhuma sala encontrada.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+
+@if (isFormularioAberto) {
+  <div class="formulario-container">
+    <h3>{{ salaEmEdicao.id ? 'Editar Sala' : 'Nova Sala' }}</h3>
+    <form #salaForm="ngForm" (ngSubmit)="salvarSala()">
+      <div class="form-group">
+        <label for="nome">Nome da Sala:</label>
+        <input type="text" name="nome" required [(ngModel)]="salaEmEdicao.nome_sala">
+      </div>
+      <div class="form-group">
+        <label for="localizacao">Localização:</label>
+        <input type="text" name="localizacao" required [(ngModel)]="salaEmEdicao.localizacao">
+      </div>
+      <div class="form-group">
+        <label for="capacidade">Capacidade:</label>
+        <input type="number" name="capacidade" required [(ngModel)]="salaEmEdicao.capacidade">
+      </div>
+      <div class="form-group">
+        <label for="tipo">Tipo de Sala:</label>
+        <select name="tipo" required [(ngModel)]="tipo_sala_id_selecionado">
+          <option [ngValue]="null" disabled>Selecione um tipo</option>
+          @for (tipo of tiposSala; track tipo.id) {
+            <option [value]="tipo.id">{{ tipo.nome }}</option>
+          }
+        </select>
+      </div>
+      <div class="form-group-check">
+        <label for="ativa">Sala Ativa:</label>
+        <input type="checkbox" name="ativa" [(ngModel)]="salaEmEdicao.ativa">
+      </div>
+      <div class="form-actions">
+        <button type="submit" [disabled]="!salaForm.valid">Salvar</button>
+        <button type="button" (click)="fecharFormulario()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+}

@@ -1,0 +1,49 @@
+<h2>Salas Disponíveis</h2>
+
+<div class="lista-salas">
+  @for (sala of salas; track sala.id) {
+    <div class="sala-item">
+      <span>
+        <strong>{{ sala.nome_sala }}</strong> (Capacidade: {{ sala.capacidade }})
+      </span>
+      <button (click)="abrirFormularioReserva(sala)">Reservar</button>
+    </div>
+  } @empty {
+    <p>Nenhuma sala disponível ou carregando...</p>
+  }
+</div>
+
+<hr>
+
+@if (salaSelecionada) {
+  <div class="formulario-reserva">
+    <h3>Reservar a sala: {{ salaSelecionada.nome_sala }}</h3>
+
+    <form #reservaForm="ngForm" (ngSubmit)="onSubmitReserva()">
+      <div class="form-group">
+        <label for="inicio">Início:</label>
+        <input type="datetime-local" id="inicio" name="inicio" required [(ngModel)]="dadosReserva.data_hora_inicio">
+      </div>
+
+      <div class="form-group">
+        <label for="fim">Fim:</label>
+        <input type="datetime-local" id="fim" name="fim" required [(ngModel)]="dadosReserva.data_hora_fim">
+      </div>
+
+      <div class="form-group">
+        <label for="responsavel">Responsável:</label>
+        <select id="responsavel" name="responsavel" required [(ngModel)]="dadosReserva.responsavel_id">
+          <option [ngValue]="null" disabled>Selecione um responsável</option>
+          @for (user of usuariosResponsaveis; track user.id) {
+            <option [value]="user.id">{{ user.nome_completo }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="!reservaForm.valid">Confirmar Reserva</button>
+        <button type="button" (click)="cancelarReserva()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+}

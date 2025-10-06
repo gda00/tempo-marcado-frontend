@@ -1,0 +1,18 @@
+<h2>Minhas Reservas</h2>
+
+<ul>
+  @for (reserva of minhasReservas; track reserva.id) {
+    <li>
+      Sala: <strong>{{ reserva.sala.nome_sala }}</strong> <br>
+      Data: <strong>{{ reserva.data_hora_inicio | date:'dd/MM/yyyy HH:mm' }}</strong> <br>
+      Status: <strong>{{ reserva.status }}</strong>
+
+      @if (isReservaFutura(reserva) && reserva.status !== 'Cancelada') {
+        <button (click)="cancelarReserva(reserva.id)">Cancelar Reserva</button>
+      }
+      <hr>
+    </li>
+  } @empty {
+    <p>Você ainda não possui nenhuma reserva.</p>
+  }
+</ul>

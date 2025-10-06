@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--white-color);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--primary-color-hover);
+}
+
+nav button {
+  margin-left: auto;
+  background-color: var(--danger-color);
+  color: var(--white-color);
+}
+
+nav button:hover {
+  background-color: var(--danger-color-hover);
+}
